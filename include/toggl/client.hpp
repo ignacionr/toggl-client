@@ -83,7 +83,7 @@ namespace ignacionr::toggl
             return performRequest(
                     std::format("{}workspaces/{}/time_entries", baseUrl, workspace_id),
                     "POST",
-                    glz::ex::to_json(entry));
+                    glz::write_json(entry).value_or("error"));
         }
 
         // std::string stopTimeEntry(auto &entry)
